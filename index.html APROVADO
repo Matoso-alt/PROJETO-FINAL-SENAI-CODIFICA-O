@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LancheLog</title>
+
+    <!-- ligação de css e html -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<!-- inicio da parte visual ao usuario -->
+
+<body>
+
+    <!-- cabeçalho com informações de data e horario ficticios -->
+
+    <header class="topo">
+
+        <div class="identidade">
+
+            <h1>Controle de Lanches</h1>
+
+            <p>Sistema Digital de Distribuição</p>
+
+        </div>
+
+        <div class="data">
+
+            16/11/2026&nbsp; 10:24
+
+        </div>
+
+    </header>
+
+    <!-- atalho para seções de retirada, historico e painel de controle -->
+
+    <div class="layout">
+
+        <aside class="menu"> <!-- aside usado para a criação do menu lateral -->
+
+            <nav>
+                <a class="ativo" href="#">Retirada de Lanche</a>
+                <a href="#">Histórico</a>
+                <a href="#">Painel de Controle</a>
+            </nav>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <section class="cartao">
+
+                <!-- uso da matricula para cadastro e retirada -->
+
+                <h2>Retirada de Lanche</h2>
+
+                <section aria-labelledby="titulo-busca">
+                    <h2 id="titulo-busca">Buscar por matrícula</h2>
+
+                    <div class="consulta">
+              
+                    <label for="matricula"></label>
+                    <input type="text" id="matricula"
+                        placeholder="Digite a matrícula...">
+
+                        <button type="button" onclick="consultar()">Consultar</button>
+
+                </div>
+
+                </section>
+
+                <section class="elegivel">
+                    <h3>Beneficiário Elegível</h3>
+                    <p>Nome: Maria Eduarda Silva</p>
+                    <p>Matrícula: 109001</p>
+                    <p>Status: Ainda não retirou o lanche hoje</p>
+                </section>
+
+                <div class="aviso">
+                    <strong>Confirme a entrega do lanche.</strong>
+                    <p>A retirada será registrada com a data e hora exatas.</p>
+                </div>
+
+                <button class="confirmar" type="button">
+                    Confirmar Entrega
+                </button>
+
+            </section>
+        </main>
+
+    </div>
+
+</body>
+</html>
