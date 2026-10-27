@@ -1,0 +1,336 @@
+
+/* =========================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================= */
+
+/* Remove margens e espaçamentos padrões
+   e facilita o cálculo das dimensões dos elementos */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define a fonte e as cores principais da página */
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #172b50;
+}
+
+
+/* =========================================
+   2. CABEÇALHO DO SISTEMA
+   ========================================= */
+
+/* Organiza o cabeçalho horizontalmente */
+.topo {
+    /* Cria o fundo azul em degradê */
+    background: linear-gradient(110deg, #205a94, #1765a5);
+
+    /* Define a cor dos textos do cabeçalho */
+    color: white;
+
+    /* Cria espaço interno */
+    padding: 20px 32px;
+
+    /* Coloca os elementos lado a lado */
+    display: flex;
+
+    /* Separa o nome do sistema da data */
+    justify-content: space-between;
+
+    /* Alinha os elementos verticalmente */
+    align-items: center;
+}
+
+/* Estiliza o título do sistema */
+.topo h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+/* Estiliza o subtítulo do sistema */
+.topo p {
+    font-size: 14px;
+    color: #dbeafe;
+}
+
+
+/* =========================================
+   3. ESTRUTURA PRINCIPAL DA PÁGINA
+   ========================================= */
+
+/* Organiza o menu lateral e o conteúdo principal */
+.layout {
+    display: flex;
+
+    /* Garante uma altura mínima para a área abaixo do cabeçalho */
+    min-height: calc(100vh - 85px);
+}
+
+
+/* =========================================
+   4. MENU LATERAL (ASIDE)
+   ========================================= */
+
+/* Define a aparência e as dimensões do menu */
+.menu {
+    width: 230px;
+    padding: 24px 16px;
+
+    /* Cor de fundo do menu */
+    background: #f8fafc;
+
+    /* Linha divisória entre menu e conteúdo */
+    border-right: 1px solid #e2e8f0;
+}
+
+/* Organiza as opções do menu em uma coluna */
+.menu nav {
+    display: flex;
+    flex-direction: column;
+
+    /* Espaçamento entre as opções */
+    gap: 8px;
+}
+
+/* Estiliza os links do menu */
+.menu a {
+    padding: 15px 12px;
+    border-radius: 8px;
+
+    /* Remove o sublinhado dos links */
+    text-decoration: none;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Destaca a opção selecionada ou sob o cursor */
+.menu a:hover,
+.menu a.ativo {
+    background: #e2efff;
+    color: #1768c4;
+}
+
+
+/* =========================================
+   5. ÁREA DE CONTEÚDO PRINCIPAL
+   ========================================= */
+
+/* Faz o conteúdo ocupar o espaço restante */
+.conteudo {
+    flex: 1;
+    padding: 24px;
+
+    /* Permite que a área encolha em telas menores */
+    min-width: 0;
+}
+
+/* Cria o cartão branco que contém o formulário */
+.cartao {
+    background: white;
+    padding: 28px;
+
+    /* Borda fina e cantos arredondados */
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    /* Sombra discreta para dar profundidade */
+    box-shadow: 0 3px 12px #0f172a08;
+}
+
+/* Estiliza o título "Retirada de Lanche" */
+.cartao h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+/* Estiliza o texto de orientação abaixo do título */
+.descricao {
+    color: #64748b;
+    margin-bottom: 28px;
+
+    /* Melhora a leitura do texto */
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   6. IDENTIFICAÇÃO DO BENEFICIÁRIO
+   ========================================= */
+
+/* Estiliza o rótulo do campo de identificação */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Coloca o campo de texto e o botão na mesma linha */
+.consulta {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+/* Estiliza o campo de matrícula, CPF ou código */
+input {
+    /* Faz o campo ocupar o espaço disponível */
+    flex: 1;
+
+    /* Evita que o campo force a largura do layout */
+    min-width: 0;
+
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   7. BOTÕES DO SISTEMA
+   ========================================= */
+
+/* Estilo compartilhado pelos botões */
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 14px 24px;
+
+    /* Cor padrão do botão Consultar */
+    background: #2474d4;
+    color: white;
+
+    font-weight: bold;
+
+    /* Mostra que o elemento pode ser clicado */
+    cursor: pointer;
+}
+
+
+/* =========================================
+   8. CARTÃO DE BENEFICIÁRIO ELEGÍVEL
+   ========================================= */
+
+/* Destaca os dados do beneficiário autorizado */
+.elegivel {
+    background: #effaf6;
+    border: 1px solid #c9eee0;
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 14px;
+}
+
+/* Destaca o título em verde */
+.elegivel h3 {
+    color: #07875c;
+    margin-bottom: 14px;
+}
+
+/* Define o espaçamento dos dados do beneficiário */
+.elegivel p {
+    margin: 9px 0;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   9. AVISO DE CONFIRMAÇÃO
+   ========================================= */
+
+/* Cria o cartão azul com as instruções */
+.aviso {
+    background: #eff6ff;
+    border: 1px solid #d4e5ff;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+/* Dá destaque à mensagem principal do aviso */
+.aviso strong {
+    color: #1d5fb8;
+}
+
+/* Estiliza a explicação complementar */
+.aviso p {
+    color: #64748b;
+    margin-top: 6px;
+}
+
+
+/* =========================================
+   10. BOTÃO CONFIRMAR ENTREGA
+   ========================================= */
+
+/* Diferencia o botão de confirmação dos demais */
+.confirmar {
+    /* Faz o botão ocupar toda a largura do cartão */
+    width: 100%;
+
+    /* Verde para destacar a ação de confirmação */
+    background: #159b70;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   11. EFEITO AO PASSAR O CURSOR
+   ========================================= */
+
+/* Escurece ligeiramente os botões ao passar o mouse */
+button:hover {
+    filter: brightness(0.94);
+}
+
+
+/* =========================================
+   12. RESPONSIVIDADE
+   ========================================= */
+
+/* Aplica estes ajustes em telas de até 700 pixels */
+@media (max-width: 700px) {
+
+    /* Permite que os elementos do cabeçalho quebrem linha */
+    .topo {
+        padding: 18px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    /* Empilha o menu e o conteúdo principal */
+    .layout {
+        flex-direction: column;
+    }
+
+    /* Faz o menu ocupar a largura da tela */
+    .menu {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Coloca as opções do menu lado a lado */
+    .menu nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Reduz o espaçamento externo do conteúdo */
+    .conteudo {
+        padding: 12px;
+    }
+
+    /* Reduz o espaço interno do cartão */
+    .cartao {
+        padding: 18px;
+    }
+
+    /* Empilha o campo de identificação e o botão */
+    .consulta {
+        flex-direction: column;
+    }
+}
