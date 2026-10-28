@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
 
@@ -44,7 +46,7 @@
 
         <aside class="menu"> <!-- aside usado para a criação do menu lateral -->
 
-            <nav>
+            <nav> <!--Menu lateral de navegação-->
                 <a class="ativo" href="#">Retirada de Lanche</a>
                 <a href="#">Histórico</a>
                 <a href="#">Painel de Controle</a>
@@ -56,45 +58,69 @@
 
             <section class="cartao">
 
-                <!-- uso da matricula para cadastro e retirada -->
+                <!-- uso da matricula para retirada -->
 
                 <h2>Retirada de Lanche</h2>
 
                 <section aria-labelledby="titulo-busca">
-                    <h2 id="titulo-busca">Buscar por matrícula</h2>
 
-                    <div class="consulta">
+                    <label for="matricula">Matrícula do colaborador</label>
+
+                            <div class="consulta">
+                                <input
+                                    type="text"
+                                    id="matricula"
+                                    placeholder="Digite a matrícula..."
+                                >
+
+                                <button type="button" onclick="consultar()">
+                                    Consultar
+                                </button>
+                            </div>
+
+                            <section class="resposta" aria-labelledby="titulo-resposta">
+
+                                <h2>Resultado da consulta</h2>
+
+                                <p id="nomeResultado"></p>
+                                <p id="resultado" role="status" aria-live="polite">
+                                    Digite a matrícula para começar.
+                                </p>
+
+                            </section>
+
+                </section>
+
+                <!--Informação do usuario após resutado da consulta ser aprovada-->
+
+                <section class="resposta" aria-labelledby="titulo-resposta">
+                    
               
-                    <label for="matricula"></label>
-                    <input type="text" id="matricula"
-                        placeholder="Digite a matrícula...">
+                    <p id="nomeresultado"></p>
+                    <p id="Resultado" role="status"></p>
+                  
+                  </section>
 
-                        <button type="button" onclick="consultar()">Consultar</button>
+                <!--Botão para confirmar a entrega do lanche-->
 
-                </div>
-
-                </section>
-
-                <section class="elegivel">
-                    <h3>Beneficiário Elegível</h3>
-                    <p>Nome: Maria Eduarda Silva</p>
-                    <p>Matrícula: 109001</p>
-                    <p>Status: Ainda não retirou o lanche hoje</p>
-                </section>
-
-                <div class="aviso">
-                    <strong>Confirme a entrega do lanche.</strong>
-                    <p>A retirada será registrada com a data e hora exatas.</p>
-                </div>
-
-                <button class="confirmar" type="button">
+                <button
+                    class="confirmar"
+                    id="confirmar"
+                    type="button"
+                    onclick="confirmarRetirada()"
+                    disabled
+                    >
                     Confirmar Entrega
                 </button>
 
             </section>
+
         </main>
 
     </div>
 
+    <script src="script.js"></script>
+
 </body>
+
 </html>
